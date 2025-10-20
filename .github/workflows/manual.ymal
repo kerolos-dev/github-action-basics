@@ -1,0 +1,17 @@
+name:  Manuoal Run Example
+
+on:
+  workflow_dispatch: 
+
+
+jobs:
+  say-hello:
+    runs-on:  ubuntu-letest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: print  info
+        run: |
+           echo  "👋 Hello from a manually triggered workflow!"
+           echo  "Current  date  and time: $(date)"
