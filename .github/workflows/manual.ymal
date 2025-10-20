@@ -1,17 +1,16 @@
-name:  Manuoal Run Example
+name: Manual Run Example
 
 on:
-  workflow_dispatch: 
-
+  workflow_dispatch:   # ✅ دي اللي بتخلي الـ Workflow يشتغل يدويًا
 
 jobs:
   say-hello:
-    runs-on:  ubuntu-letest
+    runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: print  info
+      - name: Print info
         run: |
-           echo  "👋 Hello from a manually triggered workflow!"
-           echo  "Current  date  and time: $(date)"
+          echo "👋 Hello from a manually triggered workflow!"
+          echo "Current date and time: $(date)"
