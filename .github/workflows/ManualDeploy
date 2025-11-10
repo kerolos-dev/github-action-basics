@@ -7,8 +7,9 @@ on:
         description: "Version to deploy (e.g. v1.0.0)"
         required: true
         default: "v1.0.0"
+
       environment:
-        description: "Deployment environment"
+        description: "Select deployment environment"
         required: true
         type: choice
         options:
@@ -16,16 +17,23 @@ on:
           - staging
           - testing
 
+      message:
+        description: "Optional deployment message"
+        required: false
+        default: "Triggered manually by developer"
+
 jobs:
   deploy:
     runs-on: ubuntu-latest
+
     steps:
       - name: Checkout the code
         uses: actions/checkout@v4
 
       - name: Show deployment info
         run: |
-          echo "🚀 Starting deployment..."
+          echo "🚀 Starting manual deployment..."
           echo "Version: ${{ github.event.inputs.version }}"
           echo "Environment: ${{ github.event.inputs.environment }}"
+          echo "Message: ${{ github.event.inputs.message }}"
           echo "Triggered by: ${{ github.actor }}"
