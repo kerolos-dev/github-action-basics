@@ -28,4 +28,4 @@ jobs:
           echo "🚀 Starting deployment..."
           echo "Version: ${{ github.event.inputs.version }}"
           echo "Environment: ${{ github.event.inputs.environment }}"
-          echo "Triggered by: ${{ github.actor }}"
+          echo "Triggered by: ${{ github.actor  }}"
